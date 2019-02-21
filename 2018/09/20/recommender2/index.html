@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="isdux">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+<link href="/css/stylesheet.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/isdux/loading.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/isdux/default-comments.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Technology,Recommender Arithmetic,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Life Story" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="⚠  Just across the step beyond fear more courage.    Step Two: enviroment – python3.7">
+<meta name="keywords" content="Technology,Recommender Arithmetic">
+<meta property="og:type" content="article">
+<meta property="og:title" content="〆 推荐算法实战 项亮 [学习笔记二]">
+<meta property="og:url" content="http://isdux.com/2018/09/20/recommender2/index.html">
+<meta property="og:site_name" content="Life Story">
+<meta property="og:description" content="⚠  Just across the step beyond fear more courage.    Step Two: enviroment – python3.7">
+<meta property="og:locale" content="isdux">
+<meta property="og:image" content="http://isdux.com/2018/09/20/recommender2/1.png">
+<meta property="og:image" content="http://isdux.com/2018/09/20/recommender2/2.png">
+<meta property="og:image" content="http://isdux.com/2018/09/20/recommender2/3.png">
+<meta property="og:updated_time" content="2018-10-19T02:54:42.467Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="〆 推荐算法实战 项亮 [学习笔记二]">
+<meta name="twitter:description" content="⚠  Just across the step beyond fear more courage.    Step Two: enviroment – python3.7">
+<meta name="twitter:image" content="http://isdux.com/2018/09/20/recommender2/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://isdux.com/2018/09/20/recommender2/">
+
+
+
+
+
+  <title>〆 推荐算法实战 项亮 [学习笔记二] | Life Story</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="isdux">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="container-solar">
+  <div class="solar">
+      <i class="mercury"></i>
+      <i class="venus"></i>
+      <i class="earth"></i>
+      <i class="mars"></i>
+      <i class="belt"></i>
+      <i class="jupiter"></i>
+      <i class="saturn"></i>
+      <i class="uranus"></i>
+      <i class="neptune"></i>
+  </div>
+</div>
+<div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="diy-brand" rel="start">
+        The IsDux Blog
+      </a>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Life Story</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://isdux.com/2018/09/20/recommender2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="小叔乔治">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/family/avatar520.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Life Story">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">〆 推荐算法实战 项亮 [学习笔记二]</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-20T12:25:31+00:00">
+                2018-09-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Book-Notes/" itemprop="url" rel="index">
+                    <span itemprop="name">Book Notes</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                   字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                   分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong><font color="#5A5AAD">⚠  Just across the step beyond fear more courage.   </font></strong></p>
+<h2 id="Step-Two-enviroment-–-python3-7"><a href="#Step-Two-enviroment-–-python3-7" class="headerlink" title="Step Two: enviroment – python3.7"></a><font color="#FF5151">Step Two: </font>enviroment – python3.7</h2><a id="more"></a>
+<h2 id="实战演练"><a href="#实战演练" class="headerlink" title="实战演练"></a>实战演练</h2><p>按照书籍上所示网址，进行数据的下载：</p>
+<p>选择older datasets里面的<a href="http://www.grouplens.org/node/73" target="_blank" rel="noopener">MovieLens 1M Dataset</a></p>
+<p>下载完成后就到了实现设计里面的分类器，可是，小白的我一脸懵逼，无法继续。原理什么我都可以看懂，可是，分类器的数据源呢？</p>
+<h3 id="数据源从数据库中获取"><a href="#数据源从数据库中获取" class="headerlink" title="数据源从数据库中获取"></a>数据源从数据库中获取</h3><p>于是我使用navcat工具，导入mysql，选择导入的txt文档(在每个文档的第一行手动添加上表头，对应于数据库的字段)，选择每一个文件，批量导入。</p>
+<p>完成后，突然发现，我如果已经有了结构化的数据，完全不需要再用分类器，可是直接用sql实现，与本书代码实现出发点貌似不一致，于是，认为，方向不对。</p>
+<h3 id="数据使用pandas"><a href="#数据使用pandas" class="headerlink" title="数据使用pandas"></a>数据使用pandas</h3><p>由于前面思路的错误，google搜索，MovieLens data analysis</p>
+<p><a href="http://www.gregreda.com/2013/10/26/using-pandas-on-the-movielens-dataset/" target="_blank" rel="noopener">发现文章使用pandas分析movielens数据</a></p>
+<p>于是开始使用pandas</p>
+<h4 id="安装各种库"><a href="#安装各种库" class="headerlink" title="安装各种库"></a>安装各种库</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install pandas</span><br><span class="line">pip install numpy</span><br></pre></td></tr></table></figure>
+<h5 id="numpy"><a href="#numpy" class="headerlink" title="numpy"></a>numpy</h5><p>NumPy is the fundamental package for scientific computing with Python. It contains among other things:</p>
+<ul>
+<li>a powerful N-dimensional array object|一个强大的N维数组对象</li>
+<li>sophisticated (broadcasting) functions|精致而又复杂(传播广)的方法</li>
+<li>tools for integrating C/C++ and Fortran code|继承了C/C++以及公式代码</li>
+<li>useful linear algebra, Fourier transform, and random number capabilities|继承了线性代数、傅里叶转换、随机数等有用的功能</li>
+</ul>
+<p>Besides its obvious scientific uses, NumPy can also be used as an efficient multi-dimensional container of generic data. Arbitrary data-types can be defined. This allows NumPy to seamlessly and speedily integrate with a wide variety of databases.</p>
+<p><em>除了这些在科学计算上显著的使用，numpy也被用作为一个高效多维的通用数据容器。任意数据类型都可以在这里被定义。这可以帮助numpy无缝并且高效的集成各种各样的数据库</em></p>
+<p>NumPy is licensed under the BSD license, enabling reuse with few restrictions.<br><em>numpy的证书是基于BSD认证的，所以它可以轻易被重用而只有很少的限制</em></p>
+<p>上述内容为官网对numpy的解释，由此可知，我们使用numpy进行科学计算。类似最简单的获取随机数等。</p>
+<h5 id="pandas"><a href="#pandas" class="headerlink" title="pandas"></a>pandas</h5><p>pandas is an open source, BSD-licensed library providing high-performance, easy-to-use data structures and data analysis tools for the Python programming language.</p>
+<p><em>pandas是一个开源的，基于BSD证书的python程序语言库，他提供了一个高性能、易用的数据结构和数据分析工具</em></p>
+<p>pandas is a NumFOCUS sponsored project. This will help ensure the success of development of pandas as a world-class open-source project, and makes it possible to donate to the project.</p>
+<p><em>pandas是一个由NumFOCUS赞助的一个项目，这将有助于确保pandas成功发展为世界一流的开源项目，并使得捐赠成为可能。</em></p>
+<p>pandas has full-featured, high performance in-memory join operations idiomatically very similar to relational databases like SQL. These methods perform significantly better (in some cases well over an order of magnitude better) than other open source implementations (like base::merge.data.frame in R). The reason for this is careful algorithmic design and the internal layout of the data in DataFrame.</p>
+<p><strong>pandas具有功能齐全、高性能的内存连接操作，这与我们惯用的SQL之类的关系数据库非常相似。这些方法性能要比其他(如base:: sum .data.frame in R)的开源实现好得多(在某些情况：比如数量级纬度)。其原因是他的精心算法设计和DataFrame中数据的内部布局。</strong></p>
+<p>See the cookbook for some advanced strategies.</p>
+<p>Users who are familiar with SQL but new to pandas might be interested in a comparison with SQL.</p>
+<p>pandas provides a single function, merge(), as the entry point for all standard database join operations between DataFrame objects:</p>
+<h4 id="使用pandas转换数据结构"><a href="#使用pandas转换数据结构" class="headerlink" title="使用pandas转换数据结构"></a>使用pandas转换数据结构</h4><h5 id="收集原始数据"><a href="#收集原始数据" class="headerlink" title="收集原始数据"></a>收集原始数据</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">import pandas as pd</span><br><span class="line"></span><br><span class="line"># the prefix of url</span><br><span class="line">url_prefix = &apos;E:/math/demoOne/util/dataset/rawData/&apos;</span><br><span class="line"></span><br><span class="line"># read csv</span><br><span class="line">def readCsv(path, sep, cols, coding):</span><br><span class="line">    if(coding):</span><br><span class="line">        return pd.read_csv(path,</span><br><span class="line">            sep=sep, names=cols, encoding=coding)</span><br><span class="line"></span><br><span class="line">    return pd.read_csv(path,</span><br><span class="line">        sep=sep, names=cols, encoding=&apos;latin-1&apos;, engine=&apos;python&apos;)</span><br><span class="line"></span><br><span class="line"># read data from users.dat</span><br><span class="line">user_cols = [&apos;user_id&apos;, &apos;gender&apos;, &apos;age&apos;, &apos;occupation&apos;, &apos;zip_code&apos;]</span><br><span class="line">users = readCsv(url_prefix + &apos;users.dat&apos;, &apos;::&apos;, user_cols, None)</span><br><span class="line"></span><br><span class="line"># read data form movies.dat</span><br><span class="line">movie_cols = [&apos;movie_id&apos;, &apos;title&apos;, &apos;genre&apos;]</span><br><span class="line">movies = readCsv(url_prefix + &apos;movies.dat&apos;, &apos;::&apos;, movie_cols, None)</span><br><span class="line"></span><br><span class="line"># read data form ratings.dat</span><br><span class="line">rating_cols = [&apos;user_id&apos;, &apos;movie_id&apos;, &apos;rating&apos;, &apos;time_stamp&apos;]</span><br><span class="line">ratings = readCsv(url_prefix + &apos;ratings.dat&apos;, &apos;::&apos;, rating_cols, None)</span><br><span class="line"></span><br><span class="line">print(&quot;*******users*******&quot;, &quot;\n&quot;, users, &quot;\n&quot;, &quot;*******movies*******&quot;, &quot;\n&quot;, </span><br><span class="line">    movies, &quot;\n&quot;, &quot;*******ratings*******&quot;, &quot;\n&quot;, ratings)</span><br></pre></td></tr></table></figure>
+<p>打印后就可以看到原始数据的基本结构。</p>
+<p><strong>Note 1: readCsv方法中engine=’python’可以不填写，不填写时候默认使用C引擎，速度比python快，但是支持范围上没有python引擎强大，比如分析“::”，可能会产生错误提示</strong></p>
+<p><strong>Note 2: url_prefix为我的数据源所在的文件夹绝对路径</strong></p>
+<h5 id="merge-数据-数据合并"><a href="#merge-数据-数据合并" class="headerlink" title="merge 数据(数据合并)"></a>merge 数据(数据合并)</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pd.merge(left, right, how=&apos;inner&apos;, on=None, left_on=None, right_on=None,</span><br><span class="line">         left_index=False, right_index=False, sort=True,</span><br><span class="line">         suffixes=(&apos;_x&apos;, &apos;_y&apos;), copy=True, indicator=False,</span><br><span class="line">         validate=None)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>left: A DataFrame object.</li>
+<li>right: Another DataFrame object.</li>
+<li>on: Column or index level names to join on. Must be found in both the left and right DataFrame objects. If not passed and left_index and right_index are False, the intersection of the columns in the DataFrames will be inferred to be the join keys.</li>
+<li>left_on: Columns or index levels from the left DataFrame to use as keys. Can either be column names, index level names, or arrays with length equal to the length of the DataFrame.</li>
+<li>right_on: Columns or index levels from the right DataFrame to use as keys. Can either be column names, index level names, or arrays with length equal to the length of the DataFrame.</li>
+<li>left_index: If True, use the index (row labels) from the left DataFrame as its join key(s). In the case of a DataFrame with a MultiIndex (hierarchical), the number of levels must match the number of join keys from the right DataFrame.</li>
+<li>right_index: Same usage as left_index for the right DataFrame</li>
+<li>how: One of ‘left’, ‘right’, ‘outer’, ‘inner’. Defaults to inner. See below for more detailed description of each method.</li>
+<li>sort: Sort the result DataFrame by the join keys in lexicographical order. Defaults to True, setting to False will improve performance substantially in many cases.</li>
+<li>suffixes: A tuple of string suffixes to apply to overlapping columns. Defaults to (‘_x’, ‘_y’).</li>
+<li>copy: Always copy data (default True) from the passed DataFrame objects, even when reindexing is not necessary. Cannot be avoided in many cases but may improve performance / memory usage. The cases where copying can be avoided are somewhat pathological but this option is provided nonetheless.</li>
+<li>indicator: Add a column to the output DataFrame called _merge with information on the source of each row. _merge is Categorical-type and takes on a value of left_only for observations whose merge key only appears in ‘left’ DataFrame, right_only for observations whose merge key only appears in ‘right’ DataFrame, and both if the observation’s merge key is found in both.</li>
+<li>validate : string, default None. If specified, checks if merge is of specified type.<blockquote>
+<ul>
+<li>“one_to_one” or “1:1”: checks if merge keys are unique in both left and right datasets.</li>
+<li>“one_to_many” or “1:m”: checks if merge keys are unique in left dataset.</li>
+<li>“many_to_one” or “m:1”: checks if merge keys are unique in right dataset.</li>
+<li>“many_to_many” or “m:m”: allowed, but does not result in checks.</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<p>具体示例如图所示：</p>
+<p><img src="1.png" alt><br><img src="2.png" alt><br><img src="3.png" alt></p>
+<p>看懂之后，我们将之前的movies和ratings组合起来</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># movies and ratings</span><br><span class="line">movie_ratings = pd.merge(movies, ratings)</span><br><span class="line"># movie_ratings and users</span><br><span class="line">lens = pd.merge(movie_ratings, users)</span><br></pre></td></tr></table></figure>
+<h4 id="数据分析"><a href="#数据分析" class="headerlink" title="数据分析"></a>数据分析</h4><h5 id="获取电影评分top25"><a href="#获取电影评分top25" class="headerlink" title="获取电影评分top25"></a>获取电影评分top25</h5><p>Top 25 most rated movies</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">most_rated = lens.groupby(&apos;title&apos;).size().sort_values(ascending=False)[:25]</span><br><span class="line">print(most_rated)</span><br></pre></td></tr></table></figure>
+<p><strong>其中表示内容为：</strong> <em>按照title排序，并记录出现的次数，按照从大到小排列，取前25个</em></p>
+<p>获得同样结果的更简单的写法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lens.title.value_counts()[:25]</span><br></pre></td></tr></table></figure>
+<p>至此，回归主题，用分类器对数据进行分类</p>
+<p>说道分类器又是一些长篇大论，话不多说，先安装一个机器学习的python类库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install scikit-learn</span><br></pre></td></tr></table></figure>
+<p>然后，继续回归主题，项亮的书籍，先把整章看完，在来统一结合成一个完整的代码。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+
+      
+      <div class="title-line" value="4">真孒今将命</div><br><div class="person"><br>    <div class="line0">此致: 敬礼!</div><br>    <div class="line1">送赵法师还蜀因名山奠简</div><br>    <div class="line2">作者: 李隆基</div><br>    <div class="line3">摘自: 《全唐诗》</div><br>    <div class="line4">道家奠灵简, 自昔仰神仙</div><br>    <div class="line5"><font color="red">真孒今将命</font>, 苍生福可传</div><br>    <div class="line6">江山寻故国, 城郭信依然</div><br>    <div class="line7">二室遥相望, 云回洞里天</div><br></div>
+       <div class="best-loves" style="color: steelblue;margin: 30px 0px;font-family: serif;font-size: 21px;">
+          座右铭: 进化是形成我们的身体形状和我们内在本能的主要力量, 他赋予我们大脑和学习机制，使我们可以根据经验实现自我更新。我们还需要终生学习，以改变我们的行为，从而适应包括进化论还不能预测的和可预测的各种环境。
+      </div>
+      <div class="best-loves" style="color: sienna;margin: 30px 0px;font-family: STLiti;font-size: 21px;">
+        Evolution is the major force that defines our bodily shape as well as our built-in instincts and reflexes. We also learn to change our behavior during our lifetime. This helps us cope with changes in the environment that cannot be predicted by evolution. Organisms that have a short life in a well-defined environment may have all their behavior built-in, but instead of hardwiring into us all sorts of behavior for any circumstance that we could encounter in our life, evolution gave us a large brain and a mechanism to learn, such that we could update ourselves with experience and adapt to different environments.
+      </div>
+        <div class="post-tags">
+          
+            <a href="/tags/Technology/" rel="tag"># Technology</a>
+          
+            <a href="/tags/Recommender-Arithmetic/" rel="tag"># Recommender Arithmetic</a>
+          
+        </div>
+        <script type="text/javascript" src="/lib/isdux/default-comments.js?v=1.0.6"></script>
+        <div id="containerComments"></div>
+
+        <script>
+          const myTheme = {
+            render(state, instance) {
+              const container = document.createElement('div')
+              container.lang = "en-US"
+              container.className = 'gitment-container gitment-root-container'
+
+               // your custom component
+              container.appendChild(instance.renderSomething(state, instance))
+
+              container.appendChild(instance.renderHeader(state, instance))
+              container.appendChild(instance.renderEditor(state, instance))
+              container.appendChild(instance.renderComments(state, instance))
+              container.appendChild(instance.renderFooter(state, instance))
+              return container
+            },
+            renderSomething(state, instance) {
+              const container = document.createElement('div')
+              container.lang = "en-US"
+              if (state.user.login) {
+                container.innerText = `Hello, ${state.user.login}`
+              }
+              return container
+            }
+          }
+
+          const gitment = new Gitment({
+            // id: '页面 ID', // 可选。默认为 location.href
+            owner: 'isdux',
+            repo: 'issueComments',
+            oauth: {
+              client_id: '585cecb6e29c2a97dae2',
+              client_secret: 'dd4a5c0138f1f3e170682489730f35b731555853',
+            },
+            theme: myTheme,
+          })
+
+          gitment.render("containerComments")
+          </script>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/20/pythonOsPath/" rel="next" title="〆 os.path [python os module]">
+                <i class="fa fa-chevron-left"></i> 〆 os.path [python os module]
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/21/recommender3/" rel="prev" title="〆 推荐算法实战 项亮 [学习笔记三]">
+                〆 推荐算法实战 项亮 [学习笔记三] <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+
+    </div>
+
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/family/avatar520.jpg" alt="小叔乔治">
+            
+              <p class="site-author-name" itemprop="name">小叔乔治</p>
+              <p class="site-description motion-element" itemprop="description">知识改变命运，态度决定成败。    ----小叔曰</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/isdux" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:1586676266@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Friendly Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://pondstech.com" title="创潭科技" target="_blank">创潭科技</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://baidu.com" title="baidu你就知道" target="_blank">baidu你就知道</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Step-Two-enviroment-–-python3-7"><span class="nav-number">1.</span> <span class="nav-text">Step Two: enviroment – python3.7</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实战演练"><span class="nav-number">2.</span> <span class="nav-text">实战演练</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据源从数据库中获取"><span class="nav-number">2.1.</span> <span class="nav-text">数据源从数据库中获取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据使用pandas"><span class="nav-number">2.2.</span> <span class="nav-text">数据使用pandas</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装各种库"><span class="nav-number">2.2.1.</span> <span class="nav-text">安装各种库</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#numpy"><span class="nav-number">2.2.1.1.</span> <span class="nav-text">numpy</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#pandas"><span class="nav-number">2.2.1.2.</span> <span class="nav-text">pandas</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用pandas转换数据结构"><span class="nav-number">2.2.2.</span> <span class="nav-text">使用pandas转换数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#收集原始数据"><span class="nav-number">2.2.2.1.</span> <span class="nav-text">收集原始数据</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#merge-数据-数据合并"><span class="nav-number">2.2.2.2.</span> <span class="nav-text">merge 数据(数据合并)</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据分析"><span class="nav-number">2.2.3.</span> <span class="nav-text">数据分析</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#获取电影评分top25"><span class="nav-number">2.2.3.1.</span> <span class="nav-text">获取电影评分top25</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">小叔乔治</span>
+
+  
+</div>
+
+
+  <div class="powered-by">智慧沉稳-大智若愚</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Perfect &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">Smile.George</a> best </div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+<script>
+$(document).ready(function() {
+    $(window).scrollTop(0);
+    document.documentElement.scrollTop = 0;
+});
+</script>
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

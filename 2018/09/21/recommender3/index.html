@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="isdux">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+<link href="/css/stylesheet.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/isdux/loading.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/isdux/default-comments.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Technology,Recommender Arithmetic,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Life Story" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="⚠  All man’s success is no accident.    Step Three: enviroment – python3.7">
+<meta name="keywords" content="Technology,Recommender Arithmetic">
+<meta property="og:type" content="article">
+<meta property="og:title" content="〆 推荐算法实战 项亮 [学习笔记三]">
+<meta property="og:url" content="http://isdux.com/2018/09/21/recommender3/index.html">
+<meta property="og:site_name" content="Life Story">
+<meta property="og:description" content="⚠  All man’s success is no accident.    Step Three: enviroment – python3.7">
+<meta property="og:locale" content="isdux">
+<meta property="og:image" content="http://isdux.com/2018/09/21/recommender3/1.png">
+<meta property="og:image" content="http://isdux.com/2018/09/21/recommender3/2.png">
+<meta property="og:image" content="http://isdux.com/2018/09/21/recommender3/3.png">
+<meta property="og:updated_time" content="2018-10-19T02:54:51.757Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="〆 推荐算法实战 项亮 [学习笔记三]">
+<meta name="twitter:description" content="⚠  All man’s success is no accident.    Step Three: enviroment – python3.7">
+<meta name="twitter:image" content="http://isdux.com/2018/09/21/recommender3/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://isdux.com/2018/09/21/recommender3/">
+
+
+
+
+
+  <title>〆 推荐算法实战 项亮 [学习笔记三] | Life Story</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="isdux">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="container-solar">
+  <div class="solar">
+      <i class="mercury"></i>
+      <i class="venus"></i>
+      <i class="earth"></i>
+      <i class="mars"></i>
+      <i class="belt"></i>
+      <i class="jupiter"></i>
+      <i class="saturn"></i>
+      <i class="uranus"></i>
+      <i class="neptune"></i>
+  </div>
+</div>
+<div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="diy-brand" rel="start">
+        The IsDux Blog
+      </a>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Life Story</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://isdux.com/2018/09/21/recommender3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="小叔乔治">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/family/avatar520.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Life Story">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">〆 推荐算法实战 项亮 [学习笔记三]</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-21T08:06:08+00:00">
+                2018-09-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Book-Notes/" itemprop="url" rel="index">
+                    <span itemprop="name">Book Notes</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                   字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                   分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong><font color="#5A5AAD">⚠  All man’s success is no accident.   </font></strong></p>
+<h2 id="Step-Three-enviroment-–-python3-7"><a href="#Step-Three-enviroment-–-python3-7" class="headerlink" title="Step Three: enviroment – python3.7"></a><font color="#FF5151">Step Three: </font>enviroment – python3.7</h2><a id="more"></a>
+<h2 id="基于用户的协同过滤算法"><a href="#基于用户的协同过滤算法" class="headerlink" title="基于用户的协同过滤算法"></a>基于用户的协同过滤算法</h2><p>昨天晚上有点跑偏，研究了一会pandas和numpy，也写了好几个小demo。今天开始再次阅读项亮老师的书，直接从第二章利用用户行为数据开始：</p>
+<p>通过观看，在图表2-3发现，本书中关于用户行为的统一表述</p>
+<p><img src="1.png" alt="用户行为的统一表述"></p>
+<h3 id="常用的数据分析的数据集"><a href="#常用的数据分析的数据集" class="headerlink" title="常用的数据分析的数据集"></a>常用的数据分析的数据集</h3><blockquote>
+<p>Delicious<br>CiteULike<br>Netflix (数据有过浅层次处理，没有过于稀疏的数据)<br>MovieLens (数据有过浅层次处理，没有过于稀疏的数据)</p>
+</blockquote>
+<p>对用户u推荐N个物品（记为R(u)），令用户u在测试集上喜欢的物品集合为T(u)，然后可以通<br>过准确率/召回率评测推荐算法的精度：</p>
+<h4 id="召回率"><a href="#召回率" class="headerlink" title="召回率"></a>召回率</h4><p><img src="2.png" alt="召回率"></p>
+<h4 id="准确率"><a href="#准确率" class="headerlink" title="准确率"></a>准确率</h4><p><img src="3.png" alt="准确率"></p>
+<p>公式中 | 的意思不是绝对值，而是集合的基数(也就是集合中元素的个数)，维基百科的解释是：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cardinality: &#123;\displaystyle |S|&#125; |S|, read &quot;the cardinality of the set S&quot;</span><br></pre></td></tr></table></figure>
+<h4 id="信息熵"><a href="#信息熵" class="headerlink" title="信息熵"></a>信息熵</h4><p>在信息论中，熵（英语：entropy）是接收的每条消息中包含的信息的平均量，又被称为信息熵、信源熵、平均自信息量。这里，“消息”代表来自分布或数据流中的事件、样本或特征。（熵最好理解为不确定性的量度而不是确定性的量度，因为越随机的信源的熵越大。）来自信源的另一个特征是样本的概率分布。这里的想法是，比较不可能发生的事情，当它发生了，会提供更多的信息。由于一些其他的原因，把信息（熵）定义为概率分布的对数的相反数是有道理的。事件的概率分布和每个事件的信息量构成了一个随机变量，这个随机变量的均值（即期望）就是这个分布产生的信息量的平均值（即熵）。熵的单位通常为比特，但也用Sh、nat、Hart计量，取决于定义用到对数的底。</p>
+<p>采用概率分布的对数作为信息的量度的原因是其可加性。例如，投掷一次硬币提供了1 Sh的信息，而掷m次就为m位。更一般地，你需要用log2(n)位来表示一个可以取n个值的变量。</p>
+<p><a href="https://www.zhihu.com/question/20992022" target="_blank" rel="noopener">知乎上对于熵的解释–我认为比较好理解的</a></p>
+<h2 id="基于物品的协同过滤算法"><a href="#基于物品的协同过滤算法" class="headerlink" title="基于物品的协同过滤算法"></a>基于物品的协同过滤算法</h2><p>内容类似基于用户 ，userCF 和 itemCF</p>
+<h2 id="隐语义模型"><a href="#隐语义模型" class="headerlink" title="隐语义模型"></a>隐语义模型</h2><h3 id="最优控制-optimal-control-与最优化-optimization"><a href="#最优控制-optimal-control-与最优化-optimization" class="headerlink" title="最优控制(optimal control)与最优化(optimization)"></a>最优控制(optimal control)与最优化(optimization)</h3><p>最优控制（optimal control）可以理解为最优化（optimization）领域下的一个子领域。最优化理论一般研究涉及最优化问题的建模与求解。一个最优化模型一般包括目标函数，决策变量，以及约束条件这三个基本要素。最优化问题的目标是选择一组满足约束条件决策变量，使得目标函数最优（如最小化成本，或最大化收益）。常见的问题包括线性规划，整数规划等。最优化控制问题可视为最优化问题中的一种，该类问题主要针对控制系统进行优化。系统有特定的状态（state），以及相应的控制器（controller），该类问题的目标一般也是选取最优的控制策略（control policy，即告诉我们在什么状态下进行什么样的行动），以使得系统最优（可以是成本最小，也可以是收益最大）。以库存控制问题为例，可将当前库存量视为系统状态，决策变量即为订货量，最优的策略即为在什么样的库存量下，订多少货，使得总体的库存持有成本最低。上述库存问题，同样可以建立成一个数学规划的模型（目标函数，决策变量，约束）。最优化控制理论根据问题的特点，又可细分为确定型最优化理论（deterministic）与随机型最优化理论（stochastic），</p>
+<p>根据系统输入输出之间的关系又可分为:线性最优化控制理论（linear）与非线性最优化控制理论（nonlinear）。不同的问题因为其特点不同，也会对应不同的方法，这些就难以一一列举了。</p>
+<h3 id="鲁棒性-健壮性-Robustness"><a href="#鲁棒性-健壮性-Robustness" class="headerlink" title="鲁棒性/健壮性 Robustness"></a>鲁棒性/健壮性 Robustness</h3><p>指系统在扰动或不确定的情况下仍能保持它们的特征行为。<br>鲁棒决策，一种尽可能对不确定性免疫，并在作出后相当长时间仍看上去不错的决策。<br>鲁棒统计，一种在其假定被数据产生在的真实模型所违背的情况下依然能工作良好的统计技术。</p>
+<p>（英语：Robustness）是指一个计算机系统在执行过程中处理错误，以及算法在遭遇输入、运算等异常时继续正常运行的能力。 诸如模糊测试之类的形式化方法中，必须通过制造错误的或不可预期的输入来验证程序的健壮性。很多商业产品都可用来测试软件系统的健壮性。健壮性也是失效评定分析中的一个方面。</p>
+<h3 id="结构风险函数-经验风险函数"><a href="#结构风险函数-经验风险函数" class="headerlink" title="结构风险函数/经验风险函数"></a>结构风险函数/经验风险函数</h3><h3 id="损失函数-目标函数-代价函数"><a href="#损失函数-目标函数-代价函数" class="headerlink" title="损失函数/目标函数/代价函数"></a>损失函数/目标函数/代价函数</h3><p>损失函数（loss function）是用来估量你模型的预测值f(x)与真实值Y的不一致程度，它是一个非负实值函数,通常使用L(Y, f(x))来表示，损失函数越小，模型的鲁棒性就越好。损失函数是经验风险函数的核心部分，也是结构风险函数重要组成部分</p>
+<p><a href="https://www.zhihu.com/question/52398145" target="_blank" rel="noopener">参见知乎上关于此内容的文章</a></p>
+<p><a href="http://www.csuldw.com/2016/03/26/2016-03-26-loss-function/" target="_blank" rel="noopener">常见的几种损失函数:对数、平方、指数、Hinge</a></p>
+<h3 id="过拟合"><a href="#过拟合" class="headerlink" title="过拟合"></a>过拟合</h3><p>在统计学中，过拟合（英语：overfitting，或称过度拟合）现象是指在拟合一个统计模型时，使用过多参数。</p>
+<p>对比于可获取的数据总量来说，一个荒谬的模型只要足够复杂，是可以完美地适应数据。过拟合一般可以视为违反<strong>奥卡姆剃刀</strong>原则。</p>
+<p>当可选择的参数的自由度超过数据所包含信息内容时，这会导致最后（拟合后）模型使用任意的参数，这会减少或破坏模型一般化的能力更甚于适应数据。过拟合的可能性不只取决于参数个数和数据，也跟模型架构与数据的一致性有关。此外对比于数据中预期的噪声或错误数量，跟模型错误的数量也有关。</p>
+<p>过拟合现象的观念对机器学习也是很重要的。通常一个学习算法是借由训练示例来训练的。亦即预期结果的示例是可知的。而学习者则被认为须达到可以预测出其它示例的正确的结果，因此，应适用于一般化的情况而非只是训练时所使用的现有数据（根据它的归纳偏向）。然而，学习者却会去适应训练数据中太特化但又随机的特征，特别是在当学习过程太久或示例太少时。在过拟合的过程中，当预测训练示例结果的表现增加时，应用在未知数据的表现则变更差。</p>
+<p>在统计和机器学习中，为了避免过拟合现象，须要使用额外的技巧（如交叉验证、提早停止、贝斯信息量准则、赤池信息量准则或模型比较），以指出何时会有更多训练而没有导致更好的一般化。人工神经网上的过拟合过程亦被认知为过度训练（英语：overtraining）。在treatmeant learning中，使用最小最佳支持值（英语：minimum best support value）来避免过拟合。</p>
+<p>相对于过拟合是指，使用过多参数，以致太适应数据而非一般情况，另一种常见的现象是使用太少参数，以致于不适应数据，这则称为乏适（英语：underfitting，或称：拟合不足）现象。</p>
+<p>过拟合就是说模型在训练数据上的效果远远好于在测试集上的性能。</p>
+<h2 id="LFM和基于邻域的方法的比较"><a href="#LFM和基于邻域的方法的比较" class="headerlink" title="LFM和基于邻域的方法的比较"></a>LFM和基于邻域的方法的比较</h2><p>LFM是一种基于机器学习的方法，具有比较好的理论基础。这个方法和基于邻域的方法（比<br>如UserCF、ItemCF）相比，各有优缺点。下面将从不同的方面对比LFM和基于邻域的方法。</p>
+<ul>
+<li> 理论基础 LFM具有比较好的理论基础，它是一种学习方法，通过优化一个设定的指标<br>建立最优的模型。基于邻域的方法更多的是一种基于统计的方法，并没有学习过程。</li>
+<li> 离线计算的空间复杂度 基于邻域的方法需要维护一张离线的相关表。在离线计算相关<br>表的过程中，如果用户/物品数很多，将会占据很大的内存。假设有M个用户和N个物品，<br>在计算相关表的过程中，我们可能会获得一张比较稠密的临时相关表（尽管最终我们对<br>每个物品只保留K个最相关的物品，但在中间计算过程中稠密的相关表是不可避免的），<br>那么假设是用户相关表，则需要O(M<em>M)的空间，而对于物品相关表，则需要O(N</em>N)的空<br>间。而LFM在建模过程中，如果是F个隐类，那么它需要的存储空间是O(F*(M+N))，这在<br>M和N很大时可以很好地节省离线计算的内存。在Netflix Prize中，因为用户数很庞大<br>（40多万），很少有人使用UserCF算法（据说需要30 GB左右的内存），而LFM由于大量节<br>省了训练过程中的内存（只需要4 GB），从而成为Netflix Prize中最流行的算法。</li>
+<li> 离线计算的时间复杂度 假设有M个用户、N个物品、K条用户对物品的行为记录。那么，<br>UserCF计算用户相关表的时间复杂度是O(N <em> (K/N)^2)，而ItemCF计算物品相关表的时间<br>复杂度是O(M</em>(K/M)^2)。而对于LFM，如果用F个隐类，迭代S次，那么它的计算复杂度<br>是O(K <em> F </em> S)。那么，如果K/N &gt; F<em>S，则代表UserCF的时间复杂度低于LFM，如果<br>K/M&gt;F</em>S，则说明ItemCF的时间复杂度低于LFM。在一般情况下，LFM的时间复杂度要<br>稍微高于UserCF和ItemCF，这主要是因为该算法需要多次迭代。但总体上，这两种算法<br>在时间复杂度上没有质的差别。</li>
+<li> 在线实时推荐 UserCF和ItemCF在线服务算法需要将相关表缓存在内存中，然后可以在<br>线进行实时的预测。以ItemCF算法为例，一旦用户喜欢了新的物品，就可以通过查询内<br>存中的相关表将和该物品相似的其他物品推荐给用户。因此，一旦用户有了新的行为，<br>而且该行为被实时地记录到后台的数据库系统中，他的推荐列表就会发生变化。而从LFM<br>的预测公式可以看到，LFM在给用户生成推荐列表时，需要计算用户对所有物品的兴趣<br>权重，然后排名，返回权重最大的N个物品。那么，在物品数很多时，这一过程的时间<br>复杂度非常高，可达O(M<em>N</em>F)。因此，LFM不太适合用于物品数非常庞大的系统，如<br>果要用，我们也需要一个比较快的算法给用户先计算一个比较小的候选列表，然后再用<br>LFM重新排名。另一方面，LFM在生成一个用户推荐列表时速度太慢，因此不能在线实<br>时计算，而需要离线将所有用户的推荐结果事先计算好存储在数据库中。因此，LFM不<br>能进行在线实时推荐，也就是说，当用户有了新的行为后，他的推荐列表不会发生变化。</li>
+<li> 推荐解释 ItemCF算法支持很好的推荐解释，它可以利用用户的历史行为解释推荐结果。<br>但LFM无法提供这样的解释，它计算出的隐类虽然在语义上确实代表了一类兴趣和物品，<br>却很难用自然语言描述并生成解释展现给用户。</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+
+      
+      <div class="title-line" value="4">真孒今将命</div><br><div class="person"><br>    <div class="line0">此致: 敬礼!</div><br>    <div class="line1">送赵法师还蜀因名山奠简</div><br>    <div class="line2">作者: 李隆基</div><br>    <div class="line3">摘自: 《全唐诗》</div><br>    <div class="line4">道家奠灵简, 自昔仰神仙</div><br>    <div class="line5"><font color="red">真孒今将命</font>, 苍生福可传</div><br>    <div class="line6">江山寻故国, 城郭信依然</div><br>    <div class="line7">二室遥相望, 云回洞里天</div><br></div>
+       <div class="best-loves" style="color: steelblue;margin: 30px 0px;font-family: serif;font-size: 21px;">
+          座右铭: 进化是形成我们的身体形状和我们内在本能的主要力量, 他赋予我们大脑和学习机制，使我们可以根据经验实现自我更新。我们还需要终生学习，以改变我们的行为，从而适应包括进化论还不能预测的和可预测的各种环境。
+      </div>
+      <div class="best-loves" style="color: sienna;margin: 30px 0px;font-family: STLiti;font-size: 21px;">
+        Evolution is the major force that defines our bodily shape as well as our built-in instincts and reflexes. We also learn to change our behavior during our lifetime. This helps us cope with changes in the environment that cannot be predicted by evolution. Organisms that have a short life in a well-defined environment may have all their behavior built-in, but instead of hardwiring into us all sorts of behavior for any circumstance that we could encounter in our life, evolution gave us a large brain and a mechanism to learn, such that we could update ourselves with experience and adapt to different environments.
+      </div>
+        <div class="post-tags">
+          
+            <a href="/tags/Technology/" rel="tag"># Technology</a>
+          
+            <a href="/tags/Recommender-Arithmetic/" rel="tag"># Recommender Arithmetic</a>
+          
+        </div>
+        <script type="text/javascript" src="/lib/isdux/default-comments.js?v=1.0.6"></script>
+        <div id="containerComments"></div>
+
+        <script>
+          const myTheme = {
+            render(state, instance) {
+              const container = document.createElement('div')
+              container.lang = "en-US"
+              container.className = 'gitment-container gitment-root-container'
+
+               // your custom component
+              container.appendChild(instance.renderSomething(state, instance))
+
+              container.appendChild(instance.renderHeader(state, instance))
+              container.appendChild(instance.renderEditor(state, instance))
+              container.appendChild(instance.renderComments(state, instance))
+              container.appendChild(instance.renderFooter(state, instance))
+              return container
+            },
+            renderSomething(state, instance) {
+              const container = document.createElement('div')
+              container.lang = "en-US"
+              if (state.user.login) {
+                container.innerText = `Hello, ${state.user.login}`
+              }
+              return container
+            }
+          }
+
+          const gitment = new Gitment({
+            // id: '页面 ID', // 可选。默认为 location.href
+            owner: 'isdux',
+            repo: 'issueComments',
+            oauth: {
+              client_id: '585cecb6e29c2a97dae2',
+              client_secret: 'dd4a5c0138f1f3e170682489730f35b731555853',
+            },
+            theme: myTheme,
+          })
+
+          gitment.render("containerComments")
+          </script>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/20/recommender2/" rel="next" title="〆 推荐算法实战 项亮 [学习笔记二]">
+                <i class="fa fa-chevron-left"></i> 〆 推荐算法实战 项亮 [学习笔记二]
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/10/11/recommender4/" rel="prev" title="〆 推荐算法实战 项亮 [学习笔记四]">
+                〆 推荐算法实战 项亮 [学习笔记四] <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+
+    </div>
+
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/family/avatar520.jpg" alt="小叔乔治">
+            
+              <p class="site-author-name" itemprop="name">小叔乔治</p>
+              <p class="site-description motion-element" itemprop="description">知识改变命运，态度决定成败。    ----小叔曰</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/isdux" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:1586676266@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Friendly Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://pondstech.com" title="创潭科技" target="_blank">创潭科技</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://baidu.com" title="baidu你就知道" target="_blank">baidu你就知道</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Step-Three-enviroment-–-python3-7"><span class="nav-number">1.</span> <span class="nav-text">Step Three: enviroment – python3.7</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于用户的协同过滤算法"><span class="nav-number">2.</span> <span class="nav-text">基于用户的协同过滤算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常用的数据分析的数据集"><span class="nav-number">2.1.</span> <span class="nav-text">常用的数据分析的数据集</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#召回率"><span class="nav-number">2.1.1.</span> <span class="nav-text">召回率</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#准确率"><span class="nav-number">2.1.2.</span> <span class="nav-text">准确率</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#信息熵"><span class="nav-number">2.1.3.</span> <span class="nav-text">信息熵</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于物品的协同过滤算法"><span class="nav-number">3.</span> <span class="nav-text">基于物品的协同过滤算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#隐语义模型"><span class="nav-number">4.</span> <span class="nav-text">隐语义模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#最优控制-optimal-control-与最优化-optimization"><span class="nav-number">4.1.</span> <span class="nav-text">最优控制(optimal control)与最优化(optimization)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#鲁棒性-健壮性-Robustness"><span class="nav-number">4.2.</span> <span class="nav-text">鲁棒性/健壮性 Robustness</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结构风险函数-经验风险函数"><span class="nav-number">4.3.</span> <span class="nav-text">结构风险函数/经验风险函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#损失函数-目标函数-代价函数"><span class="nav-number">4.4.</span> <span class="nav-text">损失函数/目标函数/代价函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#过拟合"><span class="nav-number">4.5.</span> <span class="nav-text">过拟合</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LFM和基于邻域的方法的比较"><span class="nav-number">5.</span> <span class="nav-text">LFM和基于邻域的方法的比较</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">小叔乔治</span>
+
+  
+</div>
+
+
+  <div class="powered-by">智慧沉稳-大智若愚</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Perfect &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">Smile.George</a> best </div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+<script>
+$(document).ready(function() {
+    $(window).scrollTop(0);
+    document.documentElement.scrollTop = 0;
+});
+</script>
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

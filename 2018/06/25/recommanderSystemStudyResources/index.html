@@ -1,0 +1,1408 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="isdux">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+<link href="/css/stylesheet.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/isdux/loading.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/isdux/default-comments.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Technology,Recommender,study resource,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Life Story" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="A pearl is a temple built by pain around a grain of sand. How to study RS: 整理了一些学习推荐系统的相关文献和书籍资料。[主要语言] C++/java">
+<meta name="keywords" content="Technology,Recommender,study resource">
+<meta property="og:type" content="article">
+<meta property="og:title" content="〆 推荐系统入门教材推荐">
+<meta property="og:url" content="http://isdux.com/2018/06/25/recommanderSystemStudyResources/index.html">
+<meta property="og:site_name" content="Life Story">
+<meta property="og:description" content="A pearl is a temple built by pain around a grain of sand. How to study RS: 整理了一些学习推荐系统的相关文献和书籍资料。[主要语言] C++/java">
+<meta property="og:locale" content="isdux">
+<meta property="og:updated_time" content="2018-07-23T03:49:06.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="〆 推荐系统入门教材推荐">
+<meta name="twitter:description" content="A pearl is a temple built by pain around a grain of sand. How to study RS: 整理了一些学习推荐系统的相关文献和书籍资料。[主要语言] C++/java">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://isdux.com/2018/06/25/recommanderSystemStudyResources/">
+
+
+
+
+
+  <title>〆 推荐系统入门教材推荐 | Life Story</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="isdux">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="container-solar">
+  <div class="solar">
+      <i class="mercury"></i>
+      <i class="venus"></i>
+      <i class="earth"></i>
+      <i class="mars"></i>
+      <i class="belt"></i>
+      <i class="jupiter"></i>
+      <i class="saturn"></i>
+      <i class="uranus"></i>
+      <i class="neptune"></i>
+  </div>
+</div>
+<div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="diy-brand" rel="start">
+        The IsDux Blog
+      </a>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Life Story</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://isdux.com/2018/06/25/recommanderSystemStudyResources/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="小叔乔治">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/family/avatar520.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Life Story">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">〆 推荐系统入门教材推荐</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-25T06:13:32+00:00">
+                2018-06-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Recommender-System/" itemprop="url" rel="index">
+                    <span itemprop="name">Recommender System</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                   字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                   分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong><font color="#5A5AAD">A pearl is a temple built by pain around a grain of sand.</font></strong></p>
+<h2 id="How-to-study-RS-整理了一些学习推荐系统的相关文献和书籍资料。"><a href="#How-to-study-RS-整理了一些学习推荐系统的相关文献和书籍资料。" class="headerlink" title="How to study RS: 整理了一些学习推荐系统的相关文献和书籍资料。"></a><font color="#FF5151">How to study RS: </font>整理了一些学习推荐系统的相关文献和书籍资料。</h2><p><font style="color: #394F6A; font-size: 20px; font-family: '微软雅黑'">[主要语言] C++/java</font><br><a id="more"></a></p>
+<h3 id="历史经典数据"><a href="#历史经典数据" class="headerlink" title="历史经典数据"></a>历史经典数据</h3><p>Segaran T. Programming collective intelligence: building smart web 2.0 applications[M]. O’Reilly Media, 2007.寓教于乐的一本入门教材，附有可以直接动手实践的toy级别代码</p>
+<p>Shapira B. Recommender systems handbook[M]. Springer, 2011. 推荐系统可做枕头，也应该放在枕边的书籍，看了半本多。如果将该书及其中的参考文献都看完并理解，那恭喜你，你已经对这个领域有深入理解了</p>
+<p>Jannach D, Zanker M, Felfernig A, et al. Recommender systems: an introduction[M]. Cambridge University Press, 2010. 可以认为是2010年前推荐系统论文的综述集合</p>
+<p>Celma O. Music recommendation and discovery[M]. Springer, 2010. 主要内容集中在音乐推荐，领域非常专注于音乐推荐，包括选取的特征，评测时如何考虑音乐因素</p>
+<p>Word sense disambiguation: Algorithms and applications[M]. Springer Science+ Business Media, 2006. 如果涉及到关键词推荐，或是文本推荐， 则可以查阅该书</p>
+<p>数据挖掘资料<br>Han J, Kamber M, Pei J. Data mining: concepts and techniques[M]. Morgan kaufmann, 2006. 数据挖掘方面的handbook，教科书类型，虽然厚，却通俗易懂(再次提醒，要了解某一领域，找本该领域的啥啥handbook耐心认真读完，那你基本对该领域有一定认识了)</p>
+<p>Chakrabarti S. Mining the Web: Discovering knowledge from hypertext data[M]. Morgan Kaufmann, 2003.介绍了一个搜索引擎中的大部分技术，包括spider，索引建立，内部的机器学习算法，信息检索，而且非常具有实用性</p>
+<p>Liu B. Web data mining: exploring hyperlinks, contents, and usage data[M]. Springer, 2007. 如果说 Mining the Web: Discovering knowledge from hypertext data更偏web mining更偏整体，工程的话，这本书就更偏策略</p>
+<p>Wu X, Kumar V, Quinlan J R, et al. Top 10 algorithms in data mining[J]. Knowledge and Information Systems, 2008, 14(1): 1-37. 专门将2006年评选出来的10大数据挖掘算法拎了出来讲讲</p>
+<p>Rajaraman A, Ullman J D. Mining of massive datasets[M]. Cambridge University Press, 2012.介绍如何使用hadoop进行数据挖掘，如果有hadoop环境则非常实用</p>
+<p>Feldman R, Sanger J. The text mining handbook: advanced approaches in analyzing unstructured data[M]. Cambridge University Press, 2007.文本挖掘的handbook</p>
+<p>机器学习资料<br>Tom M Mitchell,Machine Learning, McGraw-Hill Science/Engineering/Mat, 1997，非常早起的机器学习书籍，非常适合入门， 浅显易懂， 但对于工业界应用， 只能说是Toy级别的算法。</p>
+<p>Bishop C M, Nasrabadi N M. Pattern recognition and machine learning[M]. New York: springer, 2006. 进阶型的书籍，对每种算法都有较为具体的理论介绍</p>
+<p>课程： 机器学习（Stanford-&gt;Andrew Ng）<a href="http://v.163.com/special/opencourse/machinelearning.html，大名鼎鼎的Andrew" target="_blank" rel="noopener">http://v.163.com/special/opencourse/machinelearning.html，大名鼎鼎的Andrew</a> Ng的机器学习公开课，网易上字幕版本；配合课程stanford cs229对应的handout及习题一起学习效果更好</p>
+<p>信息检索<br>Agirre, Eneko, and Philip Glenny Edmonds, eds. Word sense disambiguation: Algorithms and applications. Vol. 33. Springer Science+ Business Media, 2006.</p>
+<p>Manning C D, Raghavan P, Schütze H. Introduction to information retrieval[M]. Cambridge: Cambridge University Press, 2008.</p>
+<p>MOFFAT A A, Bell T C. Managing gigabytes: compressing and indexing documents and images[M]. Morgan Kaufmann, 1999.一本很老的介绍搜索引擎的书了，不过09年的时候看还是被震撼到了，书中各种变着戏法使用几十M内存处理上G数据，感觉非常牛叉。</p>
+<h3 id="相关会议"><a href="#相关会议" class="headerlink" title="相关会议"></a>相关会议</h3><p>对于推荐系统领域，直接相关的会议不多，但由于推荐系统会涉及到数据挖掘、机器学习等方面的知识，并且推荐系统作为数据挖掘和机器学习的重要应用之一，同时推荐系统往更大的领域靠拢的话也属于人工智能的范畴，因此很多做推荐的学者把目光也瞄向了数据挖掘、机器学习和人工智能方面的会议。所以，如果想关注推荐系统的前沿，我们需要不仅关注推荐系统年会，还需要关注其他与推荐挂钩的会议。</p>
+<p>1、与推荐系统直接相关的会议</p>
+<p><a href="https://recsys.acm.org/" target="_blank" rel="noopener">RecSys -The ACM Conference Series on Recommender Systems.</a></p>
+<p>2、数据挖掘相关的会议</p>
+<p><a href="http://www.kdd.org/" target="_blank" rel="noopener">SIGKDD - The ACM SIGKDD Conference on Knowledge Discovery and Data Mining.</a></p>
+<p><a href="http://www.wsdm-conference.org/" target="_blank" rel="noopener">WSDM - The International Conference on Web Search and Data Mining.</a></p>
+<p><a href="http://cs.uvm.edu/~icdm/" target="_blank" rel="noopener">ICDM - The IEEE International Conference on Data Mining.</a></p>
+<p><a href="https://www.siam.org/conferences/CM/Main/sdm19" target="_blank" rel="noopener">SDM -TheSIAM International Conference on Data Mining.</a></p>
+<p>3、机器学习相关的会议</p>
+<p><a href="https://icml.cc/" target="_blank" rel="noopener">ICML - The International Conference on Machine Learning.</a></p>
+<p><a href="https://nips.cc/" target="_blank" rel="noopener">NIPS - The Conference on Neural Information Processing Systems</a></p>
+<p>4、信息检索相关的会议</p>
+<p><a href="http://sigir.org/" target="_blank" rel="noopener">SIGIR - The ACM International Conference on Research and Development in Information Retrieval</a></p>
+<p>5、数据库相关的会议</p>
+<p><a href="http://www.cikm2018.units.it/" target="_blank" rel="noopener">CIKM - The ACM International Conference on Information and Knowledge Management.</a></p>
+<p>6、Web相关的会议</p>
+<p><a href="https://www2018.thewebconf.org/" target="_blank" rel="noopener">WWW - The International World Wide Web Conference.</a></p>
+<p>7、人工智能相关的会议</p>
+<p><a href="https://aaai.org/Conferences/AAAI-18/" target="_blank" rel="noopener">AAAI - The National Conference of the American Association for Artificial Intelligence.</a></p>
+<p><a href="http://www.ijcai.org/" target="_blank" rel="noopener">IJCAI - The International Joint Conference on Artificial Intelligence.</a></p>
+<h3 id="相关学者"><a href="#相关学者" class="headerlink" title="相关学者"></a>相关学者</h3><p>Yehuda Koren<br>个人主页：Koren’s HomePage</p>
+<p>主要贡献：Netflix Prize的冠军队成员，是推荐系统领域的大神级人物，曾就职雅虎，现就职于谷歌</p>
+<p>代表文献：Matrix Factorization Techniques For Recommender Systems</p>
+<p>Hao Ma<br>个人主页：<a href="https://www.haoma.io/" target="_blank" rel="noopener">HaoMa’s HomePage</a></p>
+<p>主要贡献：社会化推荐领域的大牛，提出了许多基于社会化推荐的有效算法，现就职于微软</p>
+<p>代表文献：SoRec: Social Recommendation Using Probabilistic Matrix Factorization</p>
+<p>Julian McAuley<br>个人主页：<a href="http://cseweb.ucsd.edu/~jmcauley/" target="_blank" rel="noopener">McAuley</a></p>
+<p>主要贡献：研究方向为社交网络、数据挖掘、推荐系统，现为加利福尼亚大学圣迭戈分校助理教授</p>
+<p>代表文献：Leveraging social connections to improve personalized ranking for collaborative filtering</p>
+<p>郭贵冰<br>个人主页：<a href="https://www.librec.net/luckymoon.me/" target="_blank" rel="noopener">Guibing Guo’s HomePage</a></p>
+<p>主要贡献：国内推荐系统大牛，创办了推荐系统开源项目LibRec</p>
+<p>代表文献：TrustSVD: Collaborative Filtering with Both the Explicit and Implicit Influence of User Trust and of Item Ratings</p>
+<p>Hao Wang<br>个人主页：<a href="http://www.wanghao.in/" target="_blank" rel="noopener">HaoWang’s HomePage</a></p>
+<p>主要贡献：擅长运用深度学习技术提高推荐系统性能</p>
+<p>代表文献：Collaborative deep learning for recommender systems</p>
+<p>何向南<br>个人主页：<a href="http://www.comp.nus.edu.sg/~xiangnan/" target="_blank" rel="noopener">Xiangnan He’s Homepage</a></p>
+<p>主要贡献：运用深度学习技术提高推荐系统性能</p>
+<p>代表文献：Neural Collaborative Filtering</p>
+<p>Robin Burke<br>个人主页：<a href="http://josquin.cti.depaul.edu/~rburke/" target="_blank" rel="noopener">rburke’s HomePage</a></p>
+<p>主要贡献：混合推荐方向的大牛</p>
+<p>代表文献：Hybrid recommender systems: Survey and experiments</p>
+<p>项亮<br>主要贡献：国内推荐系统领域中理论与实践并重的专家，Netflix Prize第二名</p>
+<p>代表文献：《推荐系统实践》。</p>
+<p>石川<br>个人主页：<a href="http://www.shichuan.org/" target="_blank" rel="noopener">shichuan’s HomePage</a></p>
+<p>主要贡献：研究方向为异质信息网络上的推荐，提出了加权的异质信息相似度计算等</p>
+<p>代表文献：Semantic Path based Personalized Recommendation on Weighted Heterogeneous Information Networks</p>
+<h3 id="相关论文"><a href="#相关论文" class="headerlink" title="相关论文"></a>相关论文</h3><p><a href="https://github.com/hongleizhang/RSPapers" target="_blank" rel="noopener">RSPapers</a><br>最近和几个同学共同整理了关于推荐系统的一些经典必读论文，包括综述文章、传统经典推荐文章、社会化推荐文章、基于深度学习的推荐系统文章以及专门用于解决冷启动问题的文章等。该项目还在持续更新中，欢迎大家star，欢迎大家补充，让我们一起构建一个完整的入门推荐论文清单，让想入门推荐的童鞋们不必再想咱们一样痛苦吧。</p>
+<h3 id="相关课程"><a href="#相关课程" class="headerlink" title="相关课程"></a>相关课程</h3><p><a href="https://www.coursera.org/specializations/recommender-systems" target="_blank" rel="noopener">Recommender Systems Specialization</a><br>最近，coursea上开放了推荐系统专项课程《Recommender Systems Specialization》。</p>
+<p>该课程于2018年3月26日开课，这个系列由4门子课程和1门毕业项目课程组成，包括推荐系统导论，最近邻协同过滤，推荐系统评价，矩阵分解和高级技术等，感兴趣的同学可以关注。</p>
+<h3 id="关于数据集"><a href="#关于数据集" class="headerlink" title="关于数据集"></a>关于数据集</h3><p>1、MovieLens</p>
+<p>适用于传统的推荐任务，提供了3种不同规模的数据，包含用户对电影的评分信息，用户的人口统计学特征以及电影的描述特征。</p>
+<p>2、Filmtrust</p>
+<p>适用于社会化推荐任务，规模较小，包含用户对电影的评分信息，同时包含用户间的信任社交信息。</p>
+<p>3、Douban</p>
+<p>适用于社会化推荐任务，规模适中，包含用户对电影的评分信息，同时包含用户间的信任社交信息。</p>
+<p>4、Epinions</p>
+<p>适用于社会化推荐任务，规模较大，包含用户对电影的评分信息，同时包含用户间的信任社交信息，值得注意的是，该数据集同时还包括不信任关系信息。</p>
+<p>5、Yelp</p>
+<p>几乎适用于所有推荐任务，数据规模大，需要手动提取自己需要的信息，包含评价评分信息，用户信息（注册信息、粉丝数量、朋友信息），商品信息（属性信息、位置信息、图像信息），建议信息等。</p>
+<h3 id="综述类"><a href="#综述类" class="headerlink" title="综述类:"></a>综述类:</h3><p>1、Towards theNext Generation of Recommender Systems: A Survey of the State-of-the-Art andPossible Extensions。最经典的推荐算法综述<br>2、Collaborative Filtering Recommender Systems. JB Schafer 关于协同过滤最经典的综述<br>3、Hybrid Recommender Systems: Survey and Experiments<br>4、项亮的博士论文《动态推荐系统关键技术研究》<br>5、个性化推荐系统的研究进展.周涛等<br>6、Recommender systems L Lü, M Medo, CH Yeung, YC Zhang, ZK Zhang, T ZhouPhysics Reports 519 (1), 1-49  （<a href="https://arxiv.org/abs/1202.1112）" target="_blank" rel="noopener">https://arxiv.org/abs/1202.1112）</a></p>
+<ol start="7">
+<li>个性化推荐系统评价方法综述.周涛等</li>
+</ol>
+<p>协同过滤：<br>1.matrix factorization techniques for recommender systems. Y Koren<br>2.Using collaborative filtering to weave an information Tapestry. David Goldberg （协同过滤第一次被提出）<br>3.Item-Based Collaborative Filtering Recommendation Algorithms. Badrul Sarwar , George Karypis, Joseph Konstan .etl<br>4.Application of Dimensionality Reduction in Recommender System – A Case Study. Badrul M. Sarwar, George Karypis, Joseph A. Konstan etl<br>5.Probabilistic Memory-Based Collaborative Filtering. Kai Yu, Anton Schwaighofer, Volker Tresp, Xiaowei Xu,and Hans-Peter Kriegel<br>6.Recommendation systems:a probabilistic analysis. Ravi Kumar Prabhakar Raghavan.etl<br>7.Amazon.com recommendations: item-to-item collaborative filtering. Greg Linden, Brent Smith, and Jeremy York<br>8.Evaluation of Item-Based Top- N Recommendation Algorithms. George Karypis<br>9.Probabilistic Matrix Factorization. Ruslan Salakhutdinov<br>10.Tensor Decompositions,Alternating Least Squares and other Tales. Pierre Comon, Xavier Luciani, André De Almeida</p>
+<p>基于内容的推荐：<br>1.Content-Based Recommendation Systems. Michael J. Pazzani and Daniel Billsus</p>
+<p>基于标签的推荐：<br>1.Tag-Aware Recommender Systems: A State-of-the-Art Survey. Zi-Ke Zhang(张子柯), Tao Zhou(周 涛), and Yi-Cheng Zhang(张翼成)</p>
+<p>推荐评估指标：<br>1、推荐系统评价指标综述. 朱郁筱，吕琳媛<br>2、Accurate is not always good：How Accuacy Metrics have hurt Recommender Systems<br>3、Evaluating Recommendation Systems. Guy Shani and Asela Gunawardana<br>4、Evaluating Collaborative Filtering Recommender Systems. JL Herlocker</p>
+<p>推荐多样性和新颖性：</p>
+<ol>
+<li>Improving recommendation lists through topic diversification. Cai-Nicolas ZieglerSean M. McNee, Joseph A.Konstan,Georg Lausen</li>
+<li>Fusion-based Recommender System for Improving Serendipity</li>
+<li>Maximizing Aggregate Recommendation Diversity：A Graph-Theoretic Approach</li>
+<li>The Oblivion Problem：Exploiting forgotten items to improve Recommendation diversity</li>
+<li>A Framework for Recommending Collections</li>
+<li>Improving Recommendation Diversity. Keith Bradley and Barry Smyth</li>
+</ol>
+<p>推荐系统中的隐私性保护：<br>1、Collaborative Filtering with Privacy. John Canny<br>2、Do You Trust Your Recommendations? An Exploration Of Security and Privacy Issues in Recommender Systems. Shyong K “Tony” Lam, Dan Frankowski, and John Ried.<br>3、Privacy-Enhanced Personalization. Alfred Kobsa.etl<br>4、Differentially Private Recommender Systems：Building Privacy into theNetflix Prize Contenders. Frank McSherry and Ilya Mironov Microsoft Research,Silicon Valley Campus<br>5、When being Weak is Brave: Privacy Issues in Recommender Systems. Naren Ramakrishnan, Benjamin J. Keller,and Batul J. Mirza</p>
+<p>推荐冷启动问题：<br>1.Tied Boltzmann Machines for Cold Start Recommendations. Asela Gunawardana.etl<br>2.Pairwise Preference Regression for Cold-start Recommendation. Seung-Taek Park, Wei Chu<br>3.Addressing Cold-Start Problem in Recommendation Systems. Xuan Nhat Lam.etl<br>4.Methods and Metrics for Cold-Start Recommendations. Andrew I. Schein, Alexandrin P opescul, Lyle H. U ngar</p>
+<p>bandit(老虎机算法,可缓解冷启动问题):<br>1、Bandits and Recommender Systems. Jeremie Mary, Romaric Gaudel, Philippe Preux<br>2、Multi-Armed Bandit Algorithms and Empirical Evaluation</p>
+<p>基于社交网络的推荐：</p>
+<ol>
+<li>Social Recommender Systems. Ido Guy and David Carmel</li>
+<li>A Social Networ k-Based Recommender System(SNRS). Jianming He and Wesley W. Chu</li>
+<li>Measurement and Analysis of Online Social Networks.</li>
+<li>Referral Web：combining social networks and collaborative filtering</li>
+</ol>
+<p>基于知识的推荐：<br>1、Knowledge-based recommender systems. Robin Burke<br>2、Case-Based Recommendation. Barry Smyth<br>3、Constraint-based Recommender Systems: Technologies and Research Issues. A. Felfernig. R. Burke</p>
+<p>其他：<br>Trust-aware Recommender Systems. Paolo Massa and Paolo Avesani</p>
+<p>Reinforcement Learning based Recommender System using Biclustering Technique<br>@Ttssxuan 推荐</p>
+<p>#Reinforcement Learning</p>
+<p>本文使用强化学习进行推荐，并借助 biclustering 减少状态和动作空间，优化效率和效果。</p>
+<p>论文链接</p>
+<p><a href="https://www.paperweekly.site/papers/1571" target="_blank" rel="noopener">https://www.paperweekly.site/papers/1571</a></p>
+<p>Learning Continuous User Representations through Hybrid Filtering with doc2vec<br>@Ttssxuan 推荐</p>
+<p>#doc2vec</p>
+<p>本文将用行为使用 item 描述进行串连，构成文档，并使用 doc2vec 训练用户表示向量。</p>
+<p>论文链接</p>
+<p><a href="https://www.paperweekly.site/papers/1562" target="_blank" rel="noopener">https://www.paperweekly.site/papers/1562</a></p>
+<p>Deep Reinforcement Learning for List-wise Recommendations<br>@paperweekly 推荐</p>
+<p>#Reinforcement Learning</p>
+<p>本文将增强学习应用于推荐系统，构建了一个在线的 user-agent 交互模拟器，本文工作来自京东等。</p>
+<p>论文链接</p>
+<p><a href="https://www.paperweekly.site/papers/1472" target="_blank" rel="noopener">https://www.paperweekly.site/papers/1472</a></p>
+<p>Leveraging Long and Short-term Information in Content-aware Movie Recommendation</p>
+<p>@zhangjun 推荐</p>
+<p>#Generative Adversarial Networks</p>
+<p>本文提出了一种新颖的基于生成对抗网络的推荐系统，采用强化学习动态调整历史长期偏好和短期会话的模型，此外，还加入了封面图片特征进一步提升系统性能，最后在两个数据集上做到 state-of-art 的性能。</p>
+<p>论文链接</p>
+<p><a href="https://www.paperweekly.site/papers/1435" target="_blank" rel="noopener">https://www.paperweekly.site/papers/1435</a></p>
+<p>Deep Collaborative Autoencoder for Recommender Systems: A Unified Framework for Explicit and Implicit Feedback<br>@zhangjun 推荐</p>
+<p>#Autoencoder</p>
+<p>本文给出了一个基于 Autoencoder 的推荐系统框架，同时兼顾显式反馈和隐式反馈。</p>
+<p>论文链接</p>
+<p><a href="https://www.paperweekly.site/papers/1432" target="_blank" rel="noopener">https://www.paperweekly.site/papers/1432</a></p>
+<p>Use of Deep Learning in Modern Recommendation System: A Summary of Recent Works<br>@luosha865 推荐</p>
+<p>#Deep Learning</p>
+<p>论文总结了 2013 年以来，最近 33 篇深度学习应用于推荐系统领域的文章。按照内容相关，协同过滤，混合方法分别进行介绍，可以作为不错的索引。</p>
+<p>论文链接</p>
+<p><a href="https://www.paperweekly.site/papers/1417" target="_blank" rel="noopener">https://www.paperweekly.site/papers/1417</a></p>
+<p>A Context-Aware User-Item Representation Learning for Item Recommendation<br>@paperweekly 推荐</p>
+<p>#POI Recommendation</p>
+<p>本文对用户评论与商品评论进行交互式建模，通过识别与用户和商品都相关的文本信息，提取用户商品联合特征，在 Amazon 五个打分预测数据集上均取得了优秀的性能。</p>
+<p>论文链接</p>
+<p><a href="https://www.paperweekly.site/papers/1585" target="_blank" rel="noopener">https://www.paperweekly.site/papers/1585</a></p>
+<p>Pixie: A System for Recommending 3+ Billion Items to 200+ Million Users in Real-Time<br>@luosha865 推荐</p>
+<p>#Recommender System</p>
+<p>本文介绍了 Pinterest 的 Pixie 系统，主要针对他们开发的随机游走和剪枝算法，此外系统本身基于 Stanford Network Analysis Platform 实现。</p>
+<p>论文链接</p>
+<p><a href="https://www.paperweekly.site/papers/1437" target="_blank" rel="noopener">https://www.paperweekly.site/papers/1437</a></p>
+<p>Recommender Systems with Random Walks: A Survey<br>@zhangjun 推荐</p>
+<p>#Random Walks</p>
+<p>本文是一篇综述文章，关于“随机游走”在推荐系统中的相关应用。</p>
+<p>论文链接</p>
+<p><a href="https://www.paperweekly.site/papers/1132" target="_blank" rel="noopener">https://www.paperweekly.site/papers/1132</a></p>
+<p>Deep Learning Based Recommender System: a Survey and New Perspectives<br>@zhangjun 推荐</p>
+<p>#Deep Learning</p>
+<p>本文回顾了大部分推荐系统在深度学习上的方法，并对这些方法进行了宏观的整合。让我们了解了在推荐系统中，用深度学习的方法和传统方法相结合的多种方法，可以给我们带来一些新的启发。</p>
+<p>论文链接</p>
+<p><a href="https://www.paperweekly.site/papers/557" target="_blank" rel="noopener">https://www.paperweekly.site/papers/557</a></p>
+<p>Auto-Encoding User Ratings via Knowledge Graphs in Recommendation Scenarios<br>@jojoe 推荐</p>
+<p>#Recommender System</p>
+<p>本文将电影与电影标签之间的映射关系应用到 AutoEncoder 的可见层和隐层的连接中，将用户对电影的打分情况作为训练数据，使得最后得到的降维表示具有解释性（用户对电影标签的偏好）。</p>
+<p>论文链接</p>
+<p><a href="https://www.paperweekly.site/papers/1256" target="_blank" rel="noopener">https://www.paperweekly.site/papers/1256</a></p>
+<p>A Deep Multimodal Approach for Cold-start Music Recommendation<br>@jojoe 推荐</p>
+<p>#Recommender System</p>
+<p>本文结合音频和文本来进行歌曲推荐，只要给定一首歌就可以进行相关推荐，非常实用。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+
+      
+      <div class="title-line" value="4">真孒今将命</div><br><div class="person"><br>    <div class="line0">此致: 敬礼!</div><br>    <div class="line1">送赵法师还蜀因名山奠简</div><br>    <div class="line2">作者: 李隆基</div><br>    <div class="line3">摘自: 《全唐诗》</div><br>    <div class="line4">道家奠灵简, 自昔仰神仙</div><br>    <div class="line5"><font color="red">真孒今将命</font>, 苍生福可传</div><br>    <div class="line6">江山寻故国, 城郭信依然</div><br>    <div class="line7">二室遥相望, 云回洞里天</div><br></div>
+       <div class="best-loves" style="color: steelblue;margin: 30px 0px;font-family: serif;font-size: 21px;">
+          座右铭: 进化是形成我们的身体形状和我们内在本能的主要力量, 他赋予我们大脑和学习机制，使我们可以根据经验实现自我更新。我们还需要终生学习，以改变我们的行为，从而适应包括进化论还不能预测的和可预测的各种环境。
+      </div>
+      <div class="best-loves" style="color: sienna;margin: 30px 0px;font-family: STLiti;font-size: 21px;">
+        Evolution is the major force that defines our bodily shape as well as our built-in instincts and reflexes. We also learn to change our behavior during our lifetime. This helps us cope with changes in the environment that cannot be predicted by evolution. Organisms that have a short life in a well-defined environment may have all their behavior built-in, but instead of hardwiring into us all sorts of behavior for any circumstance that we could encounter in our life, evolution gave us a large brain and a mechanism to learn, such that we could update ourselves with experience and adapt to different environments.
+      </div>
+        <div class="post-tags">
+          
+            <a href="/tags/Technology/" rel="tag"># Technology</a>
+          
+            <a href="/tags/Recommender/" rel="tag"># Recommender</a>
+          
+            <a href="/tags/study-resource/" rel="tag"># study resource</a>
+          
+        </div>
+        <script type="text/javascript" src="/lib/isdux/default-comments.js?v=1.0.6"></script>
+        <div id="containerComments"></div>
+
+        <script>
+          const myTheme = {
+            render(state, instance) {
+              const container = document.createElement('div')
+              container.lang = "en-US"
+              container.className = 'gitment-container gitment-root-container'
+
+               // your custom component
+              container.appendChild(instance.renderSomething(state, instance))
+
+              container.appendChild(instance.renderHeader(state, instance))
+              container.appendChild(instance.renderEditor(state, instance))
+              container.appendChild(instance.renderComments(state, instance))
+              container.appendChild(instance.renderFooter(state, instance))
+              return container
+            },
+            renderSomething(state, instance) {
+              const container = document.createElement('div')
+              container.lang = "en-US"
+              if (state.user.login) {
+                container.innerText = `Hello, ${state.user.login}`
+              }
+              return container
+            }
+          }
+
+          const gitment = new Gitment({
+            // id: '页面 ID', // 可选。默认为 location.href
+            owner: 'isdux',
+            repo: 'issueComments',
+            oauth: {
+              client_id: '585cecb6e29c2a97dae2',
+              client_secret: 'dd4a5c0138f1f3e170682489730f35b731555853',
+            },
+            theme: myTheme,
+          })
+
+          gitment.render("containerComments")
+          </script>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/25/openSourceOnRecommonderSys/" rel="next" title="〆 个性化推荐系统开源项目一览">
+                <i class="fa fa-chevron-left"></i> 〆 个性化推荐系统开源项目一览
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/26/rationalSoftwareArchitect/" rel="prev" title="〆 Rational Software Architect(UML)">
+                〆 Rational Software Architect(UML) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+
+    </div>
+
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/family/avatar520.jpg" alt="小叔乔治">
+            
+              <p class="site-author-name" itemprop="name">小叔乔治</p>
+              <p class="site-description motion-element" itemprop="description">知识改变命运，态度决定成败。    ----小叔曰</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/isdux" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:1586676266@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Friendly Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://pondstech.com" title="创潭科技" target="_blank">创潭科技</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://baidu.com" title="baidu你就知道" target="_blank">baidu你就知道</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#How-to-study-RS-整理了一些学习推荐系统的相关文献和书籍资料。"><span class="nav-number">1.</span> <span class="nav-text">How to study RS: 整理了一些学习推荐系统的相关文献和书籍资料。</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#历史经典数据"><span class="nav-number">1.1.</span> <span class="nav-text">历史经典数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相关会议"><span class="nav-number">1.2.</span> <span class="nav-text">相关会议</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相关学者"><span class="nav-number">1.3.</span> <span class="nav-text">相关学者</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相关论文"><span class="nav-number">1.4.</span> <span class="nav-text">相关论文</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相关课程"><span class="nav-number">1.5.</span> <span class="nav-text">相关课程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于数据集"><span class="nav-number">1.6.</span> <span class="nav-text">关于数据集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#综述类"><span class="nav-number">1.7.</span> <span class="nav-text">综述类:</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">小叔乔治</span>
+
+  
+</div>
+
+
+  <div class="powered-by">智慧沉稳-大智若愚</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Perfect &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">Smile.George</a> best </div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+<script>
+$(document).ready(function() {
+    $(window).scrollTop(0);
+    document.documentElement.scrollTop = 0;
+});
+</script>
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

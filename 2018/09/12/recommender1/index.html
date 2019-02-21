@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="isdux">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+<link href="/css/stylesheet.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/isdux/loading.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/isdux/default-comments.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Technology,Recommender Arithmetic,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Life Story" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="⚠  The best of all ways to strengthen our days is to steal hours from the night.    Step One: enviroment – python3.7">
+<meta name="keywords" content="Technology,Recommender Arithmetic">
+<meta property="og:type" content="article">
+<meta property="og:title" content="〆 推荐算法实战 项亮 [学习笔记一]">
+<meta property="og:url" content="http://isdux.com/2018/09/12/recommender1/index.html">
+<meta property="og:site_name" content="Life Story">
+<meta property="og:description" content="⚠  The best of all ways to strengthen our days is to steal hours from the night.    Step One: enviroment – python3.7">
+<meta property="og:locale" content="isdux">
+<meta property="og:updated_time" content="2018-09-21T09:33:03.388Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="〆 推荐算法实战 项亮 [学习笔记一]">
+<meta name="twitter:description" content="⚠  The best of all ways to strengthen our days is to steal hours from the night.    Step One: enviroment – python3.7">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://isdux.com/2018/09/12/recommender1/">
+
+
+
+
+
+  <title>〆 推荐算法实战 项亮 [学习笔记一] | Life Story</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="isdux">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="container-solar">
+  <div class="solar">
+      <i class="mercury"></i>
+      <i class="venus"></i>
+      <i class="earth"></i>
+      <i class="mars"></i>
+      <i class="belt"></i>
+      <i class="jupiter"></i>
+      <i class="saturn"></i>
+      <i class="uranus"></i>
+      <i class="neptune"></i>
+  </div>
+</div>
+<div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="diy-brand" rel="start">
+        The IsDux Blog
+      </a>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Life Story</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://isdux.com/2018/09/12/recommender1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="小叔乔治">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/family/avatar520.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Life Story">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">〆 推荐算法实战 项亮 [学习笔记一]</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-12T07:20:23+00:00">
+                2018-09-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Book-Notes/" itemprop="url" rel="index">
+                    <span itemprop="name">Book Notes</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                   字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                   分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong><font color="#5A5AAD">⚠  The best of all ways to strengthen our days is to steal hours from the night.   </font></strong></p>
+<h2 id="Step-One-enviroment-–-python3-7"><a href="#Step-One-enviroment-–-python3-7" class="headerlink" title="Step One: enviroment – python3.7"></a><font color="#FF5151">Step One: </font>enviroment – python3.7</h2><a id="more"></a>
+<h1 id="评测指标"><a href="#评测指标" class="headerlink" title="评测指标"></a>评测指标</h1><h3 id="数据集分类"><a href="#数据集分类" class="headerlink" title="数据集分类"></a>数据集分类</h3><p>一般的，数据集分成四类</p>
+<blockquote>
+<ul>
+<li>系统检索到的相关文档（A）</li>
+<li>系统检索到的不相关文档（B）</li>
+<li>相关但是系统没有检索到的文档（C）</li>
+<li>不相关且没有被系统检索到的文档（D）</li>
+</ul>
+</blockquote>
+<h3 id="评测指标-1"><a href="#评测指标-1" class="headerlink" title="评测指标"></a>评测指标</h3><blockquote>
+<p>用户满意度<br>预测准确度</p>
+<blockquote>
+<p>评分预测<br>TopN 预测<br>覆盖率<br>多样性<br>新颖性<br>惊喜度<br>信任度<br>实时性<br>健壮性<br>商业目标</p>
+</blockquote>
+</blockquote>
+<h4 id="评分预测"><a href="#评分预测" class="headerlink" title="评分预测"></a>评分预测</h4><p>评分预测的预测准确度一般通过均方根误差（RMSE）和平均绝对误差（MAE）计算。</p>
+<p><strong>关于RMSE和MAE这两个指标的优缺点， Netflix认为RMSE加大了对预测不准的用户物品评分的惩罚（平方项的惩罚），因而对系统的评测更加苛刻。研究表明，如果评分系统是基于整数建立的（即用户给的评分都是整数），那么对预测结果取整会降低MAE的误差。</strong></p>
+<h4 id="TopN预测"><a href="#TopN预测" class="headerlink" title="TopN预测"></a>TopN预测</h4><p><strong>网站在提供推荐服务时，一般是给用户一个个性化的推荐列表，这种推荐叫做TopN推荐。TopN推荐的预测准确率一般通过准确率（precision）/召回率（recall）度量。</strong></p>
+<p><strong>注意</strong> ：有的时候，为了全面评测TopN推荐的准确率和召回率，一般会选取不同的推荐列表长度N，计算出一组准确率/召回率，然后画出准确率/召回率曲线（precision/recall curve）。</p>
+<h4 id="覆盖率"><a href="#覆盖率" class="headerlink" title="覆盖率"></a>覆盖率</h4><h5 id="长尾理论"><a href="#长尾理论" class="headerlink" title="长尾理论"></a>长尾理论</h5><p>长尾理论生动而形象地反映了我们的经济和文化，正在产生从为数较少的主流产品和市场（需求曲线的头部）向数量众多的狭窄市场（需求曲线的尾部）转移的现象和趋势。其基本原理是：只要存储和流通的渠道足够大，需求不旺或销量不佳的产品所共同占据的市场份额可以和那些少数热销产品所占据的市场份额相匹敌，甚至有过之而无不及。</p>
+<p><strong>覆盖率（coverage）描述一个推荐系统对物品长尾的发掘能力。覆盖率有不同的定义方法，<br>最简单的定义为推荐系统能够推荐出来的物品占总物品集合的比例。</strong></p>
+<p>注意: 覆盖率为100%的推荐系统可以将每个物品都推荐给至少一个用户。</p>
+<p>通过研究物品在推荐列表中出现次数的分布描述推荐系统挖掘长尾的能力。如果这个分布比<br>较平，那么说明推荐系统的覆盖率较高，而如果这个分布较陡峭，说明推荐系统的覆盖率较低。<br>在信息论和经济学中有两个著名的指标可以用来定义覆盖率。</p>
+<blockquote>
+<p>信息熵<br>基尼因数</p>
+</blockquote>
+<h5 id="基尼因数原理"><a href="#基尼因数原理" class="headerlink" title="基尼因数原理"></a>基尼因数原理</h5><p>设实际收入分配曲线和收入分配绝对平等曲线之间的面积为A，实际收入分配曲线右下方的面积为B。并以A除以（A+B）的商表示不平等程度。这个数值被称为基尼系数或称洛伦茨系数。如果A为零，基尼系数为零，表示收入分配完全平等；如果B为零则系数为1，收入分配绝对不平等。收入分配越是趋向平等，洛伦茨曲线的弧度越小，基尼系数也越小，反之，收入分配越是趋向不平等，洛伦茨曲线的弧度越大，那么基尼系数也越大。另外，可以参看帕累托指数(是指对收入分布不均衡的程度的度量）。</p>
+<h5 id="洛伦兹曲线"><a href="#洛伦兹曲线" class="headerlink" title="洛伦兹曲线"></a>洛伦兹曲线</h5><p>洛伦兹曲线（Lorenz curve），也译为“劳伦兹曲线”。就是，在一个总体（国家、地区）内，以“最贫穷的人口计算起一直到最富有人口”的人口百分比对应各个人口百分比的收入百分比的点组成的曲线。</p>
+<h1 id="不理解"><a href="#不理解" class="headerlink" title="不理解:"></a><font style="color: blue;font-weight: bold;font-size: 16px;">不理解:</font></h1><p>&lt;选择累积数量作为x轴的原因: 是因为连续性需要吗？&gt;</p>
+<h5 id="马太效应"><a href="#马太效应" class="headerlink" title="马太效应"></a>马太效应</h5><p>社会学领域有一个著名的马太效应，即所谓强者更强，弱者更弱的效应。如果一个系统会增<br>大热门物品和非热门物品的流行度差距，让热门的物品更加热门，不热门的物品更加不热门，那<br>么这个系统就有马太效应。  – 搜索引擎的PageRank算法也具有一定的马太效应。</p>
+<p>推荐系统的初衷是希望消除马太效应，使得各种物品都<br>能被展示给对它们感兴趣的某一类人群。但是，很多研究表明现在主流的推荐算法（比如协同过<br>滤算法）是具有马太效应的。评测推荐系统是否具有马太效应的简单办法就是使用基尼系数。如<br>果G1是从初始用户行为中计算出的物品流行度的基尼系数，G2是从推荐列表中计算出的物品流<br>行度的基尼系数，那么如果G2 &gt; G1，就说明推荐算法具有马太效应。<br>数值大，代表分布不平衡差距更大，所以，等于增大了变化度，所以具有马太效应。</p>
+<h4 id="多样性"><a href="#多样性" class="headerlink" title="多样性"></a>多样性</h4><p><strong>尽管用户的兴趣在较长的时间跨度中是一样的，但具体到用户访问推荐系统的某一刻，<br>其兴趣往往是单一的，那么如果推荐列表只能覆盖用户的一个兴趣点，而这个兴趣点不是用户这<br>个时刻的兴趣点，推荐列表就不会让用户满意。反之，如果推荐列表比较多样，覆盖了用户绝大<br>多数的兴趣点，那么就会增加用户找到感兴趣物品的概率。因此给用户的推荐列表也需要满足用<br>户广泛的兴趣，即具有多样性。</strong></p>
+<h1 id="不理解-多样性描述了推荐列表中物品两两之间的不相似性。因此，多样性和相似性是对应的。假设si-j-0-1--定义了物品i和j之间的相似度，那么用户u的推荐列表R-u-的多样性"><a href="#不理解-多样性描述了推荐列表中物品两两之间的不相似性。因此，多样性和相似性是对应的。假设si-j-0-1--定义了物品i和j之间的相似度，那么用户u的推荐列表R-u-的多样性" class="headerlink" title="不理解: 多样性描述了推荐列表中物品两两之间的不相似性。因此，多样性和相似性是对应的。假设si j ( , ) [0,1]  定义了物品i和j之间的相似度，那么用户u的推荐列表R(u)的多样性"></a><font style="color: blue;font-weight: bold;font-size: 16px;">不理解:</font> 多样性描述了推荐列表中物品两两之间的不相似性。因此，多样性和相似性是对应的。假设si j ( , ) [0,1]  定义了物品i和j之间的相似度，那么用户u的推荐列表R(u)的多样性</h1><p>多样性通俗解析: 可以提供4种不同的推荐列表：</p>
+<blockquote>
+<p>A列表中有10部动作片，没有动画片；<br>B列表中有10部动画片，没有动作片；<br>C列表中有8部动作片和2部动画片；<br>D列表有5部动作片和5部动画片。</p>
+</blockquote>
+<p>在这个例子中，一般认为C列表是最好的，因为它具有一定的多样性，但又考虑到了用户的主要兴趣。A满足了用户的主要兴趣，但缺少多样性，D列表过于多样，没有考虑到用户的主要兴趣。B列表即没有考虑用户的主要兴趣，也没有多样性，因此是最差的。</p>
+<h4 id="新颖性"><a href="#新颖性" class="headerlink" title="新颖性"></a>新颖性</h4><p><strong>新颖的推荐是指给用户推荐那些他们以前没有听说过的物品。</strong></p>
+<font style="color: red;">如何在不牺牲精度的情况下提高多样性和新颖性</font>
+
+<h4 id="惊喜度"><a href="#惊喜度" class="headerlink" title="惊喜度"></a>惊喜度</h4><p><strong>如果推荐结果和用户的历史兴趣不相似，但却让用户觉得满意，那么就可以说推荐结果的惊喜度很高，而推荐的新颖性仅仅取决于用户是否听说过这个推荐结果。</strong></p>
+<h4 id="信任度"><a href="#信任度" class="headerlink" title="信任度"></a>信任度</h4><p><strong>提高推荐系统的信任度主要有两种方法。首先需要增加推荐系统的透明度（transparency），而增加推荐系统透明度的主要办法是提供推荐解释。只有让用户了解推荐系统的运行机制，让用户认同推荐系统的运行机制，才会提高用户对推荐系统的信任度。其次是考虑用户的社交网络信息，利用用户的好友信息给用户做推荐，并且用好友进行推荐解释。这是因为用户对他们的好友一般都比较信任，因此如果推荐的商品是好友购买过的，那么他们对推荐结果就会相对比较信任。</strong></p>
+<h4 id="实时性"><a href="#实时性" class="headerlink" title="实时性"></a>实时性</h4><p>推荐系统的实时性包括两个方面。</p>
+<blockquote>
+<p>首先，推荐系统需要实时地更新推荐列表来满足用户新的行为变化。比如，当一个用户购买了iPhone，如果推荐系统能够立即给他推荐相关配件，那么肯定比第二天再给用户推荐相关配件更有价值。很多推荐系统都会在离线状态每天计算一次用户推荐列表，然后于在线期间将推荐列表展示给用户。这种设计显然是无法满足实时性的。与用户行为相应的实时性，可以通过推荐列表的变化速率来评测。如果推荐列表在用户有行为后变化不大，或者没有变化，说明推荐系统的实时性不高。<br>实时性的第二个方面是推荐系统需要能够将新加入系统的物品推荐给用户。这主要考验了推荐系统处理物品冷启动的能力。关于如何将新加入系统的物品推荐给用户，本书将在后面的章节进行讨论，而对于新物品推荐能力，我们可以利用用户推荐列表中有多大比例的物品是当天新加的来评测。</p>
+</blockquote>
+<h4 id="健壮性"><a href="#健壮性" class="headerlink" title="健壮性"></a>健壮性</h4><p><strong>任何一个能带来利益的算法系统都会被人攻击，这方面最典型的例子就是搜索引擎。搜索引擎的作弊和反作弊斗争异常激烈，这是因为如果能让自己的商品成为热门搜索词的第一个搜索果，会带来极大的商业利益。推荐系统目前也遇到了同样的作弊问题，而健壮性（即robust,鲁棒性）指标衡量了一个推荐系统抗击作弊的能力。</strong></p>
+<p>常见的健壮性的体现：</p>
+<blockquote>
+<p>设计推荐系统时尽量使用代价比较高的用户行为。比如，如果有用户购买行为和用户浏览行为，那么主要应该使用用户购买行为，因为购买需要付费，所以攻击购买行为的代价远远大于攻击浏览行为。<br>在使用数据前，进行攻击检测，从而对数据进行清理。</p>
+</blockquote>
+<h4 id="商业目标"><a href="#商业目标" class="headerlink" title="商业目标"></a>商业目标</h4><p><strong>*设计推荐系统时需要考虑最终的商业目标，而网站使用推荐系统的目的除了满足用户发现内容的需求，也需要利用推荐系统加快实现商业上的指标。</strong></p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>如何优化离线指标来提高在线指标是推荐系统研究的重要问题：<br>离线实验的优化目标是：</p>
+<blockquote>
+<p>最大化预测准确度<br>使得 覆盖率 &gt; A<br>多样性 &gt; B<br>新颖性 &gt; C</p>
+</blockquote>
+<h2 id="评测维度"><a href="#评测维度" class="headerlink" title="评测维度"></a>评测维度</h2><p><strong>在评测系统中还需要考虑评测维度，比如一个推荐算法，虽然整体性能不好，但可能在某种情况下性能比较好，而增加评测维度的目的就是知道一个算法在什么情况下性能最好。这样可以为融合不同推荐算法取得最好的整体性能带来参考。</strong></p>
+<p>常见的评测纬度分类:</p>
+<blockquote>
+<p>用户维度 主要包括用户的人口统计学信息、活跃度以及是不是新用户等。<br>物品维度 包括物品的属性信息、流行度、平均分以及是不是新加入的物品等。<br>时间维度 包括季节，是工作日还是周末，是白天还是晚上等。</p>
+</blockquote>
+<h1 id="利用用户行为数据"><a href="#利用用户行为数据" class="headerlink" title="利用用户行为数据"></a>利用用户行为数据</h1><p>著名的 啤酒与尿布 故事</p>
+<p>用户行为数据中蕴涵着很多不是那么显而易见的规律，而个性化推荐算法的任务就是通过计算机去发现这些规律，从而为产品的设计提供指导，提高用户体验。</p>
+<p><strong>基于用户行为分析的推荐算法是个性化推荐系统的重要算法，学术界一般将这种类型的算法称为协同过滤算法。顾名思义，协同过滤就是指用户可以齐心协力，通过不断地和网站互动，使自己的推荐列表能够不断过滤掉自己不感兴趣的物品，从而越来越满足自己的需求。</strong></p>
+<h2 id="用户行为数据简介"><a href="#用户行为数据简介" class="headerlink" title="用户行为数据简介"></a>用户行为数据简介</h2><p>用户行为在个性化推荐系统中一般分两种——显性反馈行为（explicit feedback）和隐性反馈<br>行为（implicit feedback）。</p>
+<p>有代表性的数据集主要分类为:</p>
+<blockquote>
+<p>无上下文信息的隐性反馈数据集每一条行为记录仅仅包含用户ID和物品ID。Book-Crossing就是这种类型的数据集。<br>无上下文信息的显性反馈数据集 每一条记录包含用户ID、物品ID和用户对物品的评分。<br>有上下文信息的隐性反馈数据集 每一条记录包含用户ID、物品ID和用户对物品产生行为的时间戳。Lastfm数据集就是这种类型的数据集。<br>有上下文信息的显性反馈数据集 每一条记录包含用户ID、物品ID、用户对物品的评分和评分行为发生的时间戳。Netflix Prize提供的就是这种类型的数据集。</p>
+</blockquote>
+<p>协同过滤算法的方法常见的有:</p>
+<blockquote>
+<p>基于邻域的方法（neighborhood-based）<br>隐语义模型（latent factor model）<br>基于图的随机游走算法（random walk on graph）等。在这些方法中，</p>
+</blockquote>
+<p>最著名的、在业界得到最广泛应用的算法是基于邻域的方法，而基于邻域的方法主要包含下<br>面两种算法。</p>
+<blockquote>
+<p>基于用户的协同过滤算法 这种算法给用户推荐和他兴趣相似的其他用户喜欢的物品。<br>基于物品的协同过滤算法 这种算法给用户推荐和他之前喜欢的物品相似的物品。</p>
+</blockquote>
+<h3 id="基于用户的协同过滤算法"><a href="#基于用户的协同过滤算法" class="headerlink" title="基于用户的协同过滤算法"></a>基于用户的协同过滤算法</h3><blockquote>
+<p>(1) 找到和目标用户兴趣相似的用户集合。<br>(2) 找到这个集合中的用户喜欢的，且目标用户没有听说过的物品推荐给目标用户。</p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+
+      
+      <div class="title-line" value="4">真孒今将命</div><br><div class="person"><br>    <div class="line0">此致: 敬礼!</div><br>    <div class="line1">送赵法师还蜀因名山奠简</div><br>    <div class="line2">作者: 李隆基</div><br>    <div class="line3">摘自: 《全唐诗》</div><br>    <div class="line4">道家奠灵简, 自昔仰神仙</div><br>    <div class="line5"><font color="red">真孒今将命</font>, 苍生福可传</div><br>    <div class="line6">江山寻故国, 城郭信依然</div><br>    <div class="line7">二室遥相望, 云回洞里天</div><br></div>
+       <div class="best-loves" style="color: steelblue;margin: 30px 0px;font-family: serif;font-size: 21px;">
+          座右铭: 进化是形成我们的身体形状和我们内在本能的主要力量, 他赋予我们大脑和学习机制，使我们可以根据经验实现自我更新。我们还需要终生学习，以改变我们的行为，从而适应包括进化论还不能预测的和可预测的各种环境。
+      </div>
+      <div class="best-loves" style="color: sienna;margin: 30px 0px;font-family: STLiti;font-size: 21px;">
+        Evolution is the major force that defines our bodily shape as well as our built-in instincts and reflexes. We also learn to change our behavior during our lifetime. This helps us cope with changes in the environment that cannot be predicted by evolution. Organisms that have a short life in a well-defined environment may have all their behavior built-in, but instead of hardwiring into us all sorts of behavior for any circumstance that we could encounter in our life, evolution gave us a large brain and a mechanism to learn, such that we could update ourselves with experience and adapt to different environments.
+      </div>
+        <div class="post-tags">
+          
+            <a href="/tags/Technology/" rel="tag"># Technology</a>
+          
+            <a href="/tags/Recommender-Arithmetic/" rel="tag"># Recommender Arithmetic</a>
+          
+        </div>
+        <script type="text/javascript" src="/lib/isdux/default-comments.js?v=1.0.6"></script>
+        <div id="containerComments"></div>
+
+        <script>
+          const myTheme = {
+            render(state, instance) {
+              const container = document.createElement('div')
+              container.lang = "en-US"
+              container.className = 'gitment-container gitment-root-container'
+
+               // your custom component
+              container.appendChild(instance.renderSomething(state, instance))
+
+              container.appendChild(instance.renderHeader(state, instance))
+              container.appendChild(instance.renderEditor(state, instance))
+              container.appendChild(instance.renderComments(state, instance))
+              container.appendChild(instance.renderFooter(state, instance))
+              return container
+            },
+            renderSomething(state, instance) {
+              const container = document.createElement('div')
+              container.lang = "en-US"
+              if (state.user.login) {
+                container.innerText = `Hello, ${state.user.login}`
+              }
+              return container
+            }
+          }
+
+          const gitment = new Gitment({
+            // id: '页面 ID', // 可选。默认为 location.href
+            owner: 'isdux',
+            repo: 'issueComments',
+            oauth: {
+              client_id: '585cecb6e29c2a97dae2',
+              client_secret: 'dd4a5c0138f1f3e170682489730f35b731555853',
+            },
+            theme: myTheme,
+          })
+
+          gitment.render("containerComments")
+          </script>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/12/debian1/" rel="next" title="〆 debian系统搭配xfce4桌面 [linuxNetwork]">
+                <i class="fa fa-chevron-left"></i> 〆 debian系统搭配xfce4桌面 [linuxNetwork]
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/17/sass/" rel="prev" title="〆 sass [manage your css]">
+                〆 sass [manage your css] <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+
+    </div>
+
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/family/avatar520.jpg" alt="小叔乔治">
+            
+              <p class="site-author-name" itemprop="name">小叔乔治</p>
+              <p class="site-description motion-element" itemprop="description">知识改变命运，态度决定成败。    ----小叔曰</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/isdux" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:1586676266@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Friendly Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://pondstech.com" title="创潭科技" target="_blank">创潭科技</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://baidu.com" title="baidu你就知道" target="_blank">baidu你就知道</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Step-One-enviroment-–-python3-7"><span class="nav-number">1.</span> <span class="nav-text">Step One: enviroment – python3.7</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#评测指标"><span class="nav-number"></span> <span class="nav-text">评测指标</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据集分类"><span class="nav-number">0.1.</span> <span class="nav-text">数据集分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#评测指标-1"><span class="nav-number">0.2.</span> <span class="nav-text">评测指标</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#评分预测"><span class="nav-number">0.2.1.</span> <span class="nav-text">评分预测</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TopN预测"><span class="nav-number">0.2.2.</span> <span class="nav-text">TopN预测</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#覆盖率"><span class="nav-number">0.2.3.</span> <span class="nav-text">覆盖率</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#长尾理论"><span class="nav-number">0.2.3.1.</span> <span class="nav-text">长尾理论</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#基尼因数原理"><span class="nav-number">0.2.3.2.</span> <span class="nav-text">基尼因数原理</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#洛伦兹曲线"><span class="nav-number">0.2.3.3.</span> <span class="nav-text">洛伦兹曲线</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#不理解"><span class="nav-number"></span> <span class="nav-text">不理解:</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#马太效应"><span class="nav-number">0.0.0.1.</span> <span class="nav-text">马太效应</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多样性"><span class="nav-number">0.0.1.</span> <span class="nav-text">多样性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#不理解-多样性描述了推荐列表中物品两两之间的不相似性。因此，多样性和相似性是对应的。假设si-j-0-1--定义了物品i和j之间的相似度，那么用户u的推荐列表R-u-的多样性"><span class="nav-number"></span> <span class="nav-text">不理解: 多样性描述了推荐列表中物品两两之间的不相似性。因此，多样性和相似性是对应的。假设si j ( , ) [0,1]  定义了物品i和j之间的相似度，那么用户u的推荐列表R(u)的多样性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#新颖性"><span class="nav-number">0.0.1.</span> <span class="nav-text">新颖性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#惊喜度"><span class="nav-number">0.0.2.</span> <span class="nav-text">惊喜度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#信任度"><span class="nav-number">0.0.3.</span> <span class="nav-text">信任度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实时性"><span class="nav-number">0.0.4.</span> <span class="nav-text">实时性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#健壮性"><span class="nav-number">0.0.5.</span> <span class="nav-text">健壮性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#商业目标"><span class="nav-number">0.0.6.</span> <span class="nav-text">商业目标</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">0.1.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#评测维度"><span class="nav-number">1.</span> <span class="nav-text">评测维度</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#利用用户行为数据"><span class="nav-number"></span> <span class="nav-text">利用用户行为数据</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#用户行为数据简介"><span class="nav-number">1.</span> <span class="nav-text">用户行为数据简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基于用户的协同过滤算法"><span class="nav-number">1.1.</span> <span class="nav-text">基于用户的协同过滤算法</span></a></li></ol></li></ol></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">小叔乔治</span>
+
+  
+</div>
+
+
+  <div class="powered-by">智慧沉稳-大智若愚</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Perfect &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">Smile.George</a> best </div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+<script>
+$(document).ready(function() {
+    $(window).scrollTop(0);
+    document.documentElement.scrollTop = 0;
+});
+</script>
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
